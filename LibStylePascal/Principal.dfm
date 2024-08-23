@@ -5363,4 +5363,21 @@ object FrmPrincipal: TFrmPrincipal
     ParentFont = False
     Transparent = True
   end
+  object Button1: TButton
+    Left = 584
+    Top = 96
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Painel: TPanel
+    Left = 464
+    Top = 192
+    Width = 369
+    Height = 137
+    Caption = 'Painel'
+    TabOrder = 1
+  end
 end

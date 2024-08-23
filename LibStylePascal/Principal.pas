@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, ExtCtrls, StdCtrls;
+  Dialogs, Buttons, ExtCtrls, StdCtrls, UBs_Botoes;
 
 type
   TFrmPrincipal = class(TForm)
@@ -24,7 +24,10 @@ type
     LblInfo: TLabel;
     LblLight: TLabel;
     LblDark: TLabel;
+    Button1: TButton;
+    Painel: TPanel;
     procedure FormShow(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,6 +44,20 @@ implementation
 procedure TFrmPrincipal.FormShow(Sender: TObject);
 begin
   //Panel1.Color := $007bff;
+end;
+
+procedure TFrmPrincipal.Button1Click(Sender: TObject);
+  var Botao : ClassBtnPrimary;
+  imagem : String;
+begin
+  // criar botão
+  Botao := ClassBtnPrimary.Create;
+
+  Botao.NovoBotao('Teste', 464 , 190, 0, 0, Painel);
+
+  Application.ProcessMessages;
+
+
 end;
 
 end.

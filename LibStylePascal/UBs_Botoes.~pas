@@ -3,6 +3,48 @@ unit UBs_Botoes;
 
 interface
 
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Buttons, ExtCtrls, StdCtrls;
+
+Type TBtnPrimary = Record
+  Lbl : Tlabel;
+  Img : TImage;
+  Imagem : String;
+  CorImg : String;
+  PosLeft : Double;
+  PosTop : Double;
+  PosWidtg : Double;
+  PosHeight : Double;
+end;
+
+Type ClassBtnPrimary = Class
+  Btn : TBtnPrimary;
+
+  private
+    { Private declarations }
+  public
+    procedure NovoBotao(Texto: String; PosLeft, PosTop, Height, Width: Double);
+
+end;
+
 implementation
+
+{ ClassBtnPrimary }
+
+
+{ ClassBtnPrimary }
+
+procedure ClassBtnPrimary.NovoBotao(Texto: String; PosLeft, PosTop, Height, Width: Double);
+  var NB : ClassBtnPrimary;
+begin
+  //Criar novo botão Primary
+  NB := ClassBtnPrimary.Create;
+
+  NB.Btn.Lbl.Caption := Texto;
+  NB.Btn.PosLeft := PosLeft;
+  NB.Btn.PosTop := PosTop;
+
+end;
 
 end.
