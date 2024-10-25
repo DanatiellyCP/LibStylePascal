@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, ExtCtrls, StdCtrls, UBs_Botoes;
+  Dialogs, Buttons, ExtCtrls, StdCtrls, UBs_Botoes, JvExControls,
+  JvSpeedButton;
 
 type
   TFrmPrincipal = class(TForm)
@@ -26,6 +27,8 @@ type
     LblDark: TLabel;
     Button1: TButton;
     Painel: TPanel;
+    JvSpeedButton1: TJvSpeedButton;
+    JvSpeedButton2: TJvSpeedButton;
     procedure FormShow(Sender: TObject);
     procedure Button1Click(Sender: TObject);
   private
@@ -33,6 +36,8 @@ type
   public
     { Public declarations }
   end;
+
+ 
 
 var
   FrmPrincipal: TFrmPrincipal;
@@ -48,12 +53,19 @@ end;
 
 procedure TFrmPrincipal.Button1Click(Sender: TObject);
   var Botao : ClassBtnPrimary;
-  imagem : String;
+  Img : TImage;
+  Painel : TPanel;
 begin
   // criar botão
-  Botao := ClassBtnPrimary.Create;
+  {Local:= extractfilepath(Application.ExeName);
 
-  Botao.NovoBotao('Teste', 464 , 190, 0, 0, Painel);
+  Botao := ClassBtnPrimary.Create;
+  Botao.NovoBotao('Teste', 464 , 190, 0, 0, Painel, Img);}
+
+
+  JvSpeedButton1.Color := PRIMARY;
+
+
 
   Application.ProcessMessages;
 

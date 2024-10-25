@@ -24,9 +24,22 @@ Type ClassBtnPrimary = Class
   private
     { Private declarations }
   public
-    procedure NovoBotao(Texto: String; PosLeft, PosTop, Height, Width: Double; Painel: TPanel);
+    procedure NovoBotao(Texto: String; PosLeft, PosTop, Height, Width: Double; Painel: TPanel; Img: TImage);
 
 end;
+
+  var
+  Local: String;
+
+ const
+  PRIMARY   = $0275d8;
+  SECUNDARY = $7c8184;
+  SUCCESS   = $5cb85c;
+  DANGER    = $d9534f;
+  WARNING   = $f0ad4e;
+  INFO      = $5bc0de;
+  LIGHT     = $f7f7f7;
+  DARK      = $292b2c;
 
 implementation
 
@@ -35,24 +48,13 @@ implementation
 
 { ClassBtnPrimary }
 
-procedure ClassBtnPrimary.NovoBotao(Texto: String; PosLeft, PosTop, Height, Width: Double; Painel: TPanel);
+procedure ClassBtnPrimary.NovoBotao(Texto: String; PosLeft, PosTop, Height, Width: Double; Painel: TPanel; Img: TImage);
   var NB : ClassBtnPrimary;
   Imagem : TImage;
 begin
   //Criar novo botão Primary
-  Imagem.Create(Self);
+  NB.NovoBotao(Texto, PosLeft, PosTop, Height, Width, Painel, Img);
 
-  NB := ClassBtnPrimary.Create;
-
-  NB.Btn.Img :=
-
-  NB.Btn.Lbl.Caption := Texto;
-  NB.Btn.PosLeft := PosLeft;
-  NB.Btn.PosTop := PosTop;
-  NB.
-
-
-  NB.Btn.Img.Picture.LoadFromFile('C:\Users\Danatielly\Documents\GitHub\LibStylePascal\LibStylePascal\img\bs_btn-primary.bmp');
 
 end;
 

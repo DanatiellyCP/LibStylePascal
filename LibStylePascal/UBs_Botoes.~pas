@@ -24,9 +24,22 @@ Type ClassBtnPrimary = Class
   private
     { Private declarations }
   public
-    procedure NovoBotao(Texto: String; PosLeft, PosTop, Height, Width: Double);
+    procedure NovoBotao(Texto: String; PosLeft, PosTop, Height, Width: Double; Painel: TPanel; Img: TImage);
 
 end;
+
+  var
+  Local: String;
+
+ const
+  IMG_PRIMARY   = '/Img/bs_btn-primary.bmp';
+  IMG_SECUNDARY = '/Img/bs_btn-secondary.bmp';
+  IMG_SUCCESS   = '/Img/bs_btn-success.bmp';
+  IMG_DANGER    = '/Img/bs_btn-danger.bmp';
+  IMG_WARNING   = '/Img/bs_btn-warning.bmp';
+  IMG_INFO      = '/Img/bs_btn-info.bmp';
+  IMG_LIGHT     = '/Img/bs_btn-light.bmp';
+  IMG_DARK      = '/Img/bs_btn-dark.bmp';
 
 implementation
 
@@ -35,15 +48,13 @@ implementation
 
 { ClassBtnPrimary }
 
-procedure ClassBtnPrimary.NovoBotao(Texto: String; PosLeft, PosTop, Height, Width: Double);
+procedure ClassBtnPrimary.NovoBotao(Texto: String; PosLeft, PosTop, Height, Width: Double; Painel: TPanel; Img: TImage);
   var NB : ClassBtnPrimary;
+  Imagem : TImage;
 begin
   //Criar novo botão Primary
-  NB := ClassBtnPrimary.Create;
+  NB.NovoBotao(Texto, PosLeft, PosTop, Height, Width, Painel, Img);
 
-  NB.Btn.Lbl.Caption := Texto;
-  NB.Btn.PosLeft := PosLeft;
-  NB.Btn.PosTop := PosTop;
 
 end;
 

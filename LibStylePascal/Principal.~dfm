@@ -5372,13 +5372,12 @@ object FrmPrincipal: TFrmPrincipal
     TabOrder = 0
     OnClick = Button1Click
   end
-  object Button2: TButton
-    Left = 584
+  object Painel: TPanel
+    Left = 464
     Top = 192
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
+    Width = 369
+    Height = 137
+    Caption = 'Painel'
     TabOrder = 1
-    OnClick = Button1Click
   end
 end
