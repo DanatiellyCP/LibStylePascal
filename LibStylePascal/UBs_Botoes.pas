@@ -1,5 +1,12 @@
 unit UBs_Botoes;
-// Classe dos botões Bootstrap Delphi
+// Unit de botões Bootstrap Delphi/Pascal
+// Dependencias de componente:
+//  TJVDotNetEdit, TJVSpeedButton, TImage
+// Estilo de fonte adotada :
+// Textos simples : MS Reference Sans Serif - 10 - Regular
+// Títulos: MS Reference Sans Serif - 14 - Negrito
+// Cores para textos de botões e textos do form:
+// - Branco, Preto, Cinza, $00F3F3F3,
 
 interface
 
@@ -32,14 +39,25 @@ end;
   Local: String;
 
  const
-  PRIMARY   = $0275d8;
-  SECUNDARY = $7c8184;
-  SUCCESS   = $5cb85c;
-  DANGER    = $d9534f;
-  WARNING   = $f0ad4e;
-  INFO      = $5bc0de;
-  LIGHT     = $f7f7f7;
-  DARK      = $292b2c;
+ ///  consts para botões
+
+  PRIMARY   = $00FF8000;
+  SECUNDARY = $007E7E7E;
+  SUCCESS   = $0017AA3D;
+  DANGER    = $004E31EE;
+  WARNING   = $000DBEF2;
+  INFO      = $00D0C52F;
+  LIGHT     = $00F3F3F3;
+  DARK      = $00252525;
+
+  /// consts para menu
+  FUNDO_MENU_SIMPLES = clBtnFace;
+  HEADER_ESCURO = $003E1F00;
+  BG_SIMPLES = clInactiveBorder; //BACKGRAUND
+  BTN_MENU_CLARO = $00F3F3F3;
+  BTN_MENU_ESCURO = $00252525;
+
+
 
 implementation
 

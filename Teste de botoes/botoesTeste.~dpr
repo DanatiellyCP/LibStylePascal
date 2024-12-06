@@ -1,0 +1,13 @@
+program botoesTeste;
+
+uses
+  Forms,
+  teste_botoes in 'teste_botoes.pas' {FrmTesteBotoes};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFrmTesteBotoes, FrmTesteBotoes);
+  Application.Run;
+end.

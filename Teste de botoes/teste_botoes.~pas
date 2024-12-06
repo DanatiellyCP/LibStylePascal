@@ -1,0 +1,38 @@
+unit teste_botoes;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, UButtons_camaleao, JvExControls, JvSpeedButton;
+
+type
+  TFrmTesteBotoes = class(TForm)
+    BtnPimary1: TBtnPimary;
+    BtnSecundary1: TBtnSecundary;
+    BtnSuccess1: TBtnSuccess;
+    BtnDanger1: TBtnDanger;
+    BtnWarning1: TBtnWarning;
+    BtnInfo1: TBtnInfo;
+    BtnDark1: TBtnDark;
+    BtnLight1: TBtnLight;
+    procedure BtnPimary1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmTesteBotoes: TFrmTesteBotoes;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmTesteBotoes.BtnPimary1Click(Sender: TObject);
+begin
+  ShowMessage('Clicou no BtnPimary');
+end;
+
+end.

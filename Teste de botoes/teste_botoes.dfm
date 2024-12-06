@@ -1,0 +1,196 @@
+object FrmTesteBotoes: TFrmTesteBotoes
+  Left = 397
+  Top = 126
+  AutoScroll = False
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Teste de Bot'#245'es Lib Camale'#227'o'
+  ClientHeight = 451
+  ClientWidth = 315
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object BtnPimary1: TBtnPimary
+    Left = 24
+    Top = 8
+    Width = 265
+    Height = 41
+    Caption = 'Primary'
+    Color = 16744448
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    HotTrackFont.Charset = DEFAULT_CHARSET
+    HotTrackFont.Color = clWindowText
+    HotTrackFont.Height = -13
+    HotTrackFont.Name = 'MS Sans Serif'
+    HotTrackFont.Style = []
+    ParentFont = False
+    OnClick = BtnPimary1Click
+    CorHover = clGrayText
+    CorPadrao = 16744448
+    FontePadrao = 'MS Sans Serif'
+  end
+  object BtnSecundary1: TBtnSecundary
+    Left = 24
+    Top = 64
+    Width = 265
+    Height = 41
+    Caption = 'Secundary'
+    Color = 8289918
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    HotTrackFont.Charset = DEFAULT_CHARSET
+    HotTrackFont.Color = clWindowText
+    HotTrackFont.Height = -13
+    HotTrackFont.Name = 'MS Sans Serif'
+    HotTrackFont.Style = []
+    ParentFont = False
+    OnClick = BtnSecundary1Click
+    CorHover = clGrayText
+    CorPadrao = 8289918
+    FontePadrao = 'MS Sans Serif'
+  end
+  object BtnSuccess1: TBtnSuccess
+    Left = 24
+    Top = 232
+    Width = 265
+    Height = 41
+    Caption = 'Success'
+    Color = 1550909
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    HotTrackFont.Charset = DEFAULT_CHARSET
+    HotTrackFont.Color = clWindowText
+    HotTrackFont.Height = -13
+    HotTrackFont.Name = 'MS Sans Serif'
+    HotTrackFont.Style = []
+    ParentFont = False
+    OnClick = BtnSuccess1Click
+    CorHover = clGrayText
+    CorPadrao = 1550909
+  end
+  object BtnDanger1: TBtnDanger
+    Left = 24
+    Top = 120
+    Width = 265
+    Height = 41
+    Caption = 'Danger'
+    Color = 5124590
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    HotTrackFont.Charset = DEFAULT_CHARSET
+    HotTrackFont.Color = clWindowText
+    HotTrackFont.Height = -13
+    HotTrackFont.Name = 'MS Sans Serif'
+    HotTrackFont.Style = []
+    ParentFont = False
+    OnClick = BtnDanger1Click
+    CorHover = clRed
+    CorPadrao = 5124590
+  end
+  object BtnWarning1: TBtnWarning
+    Left = 24
+    Top = 288
+    Width = 265
+    Height = 41
+    Caption = 'Warning'
+    Color = 900850
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    HotTrackFont.Charset = DEFAULT_CHARSET
+    HotTrackFont.Color = clWindowText
+    HotTrackFont.Height = -13
+    HotTrackFont.Name = 'MS Sans Serif'
+    HotTrackFont.Style = []
+    ParentFont = False
+    OnClick = BtnWarning1Click
+    CorHover = clGrayText
+    CorPadrao = 900850
+  end
+  object BtnInfo1: TBtnInfo
+    Left = 24
+    Top = 176
+    Width = 265
+    Height = 41
+    Caption = 'Info'
+    Color = 13681967
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    HotTrackFont.Charset = DEFAULT_CHARSET
+    HotTrackFont.Color = clWindowText
+    HotTrackFont.Height = -13
+    HotTrackFont.Name = 'MS Sans Serif'
+    HotTrackFont.Style = []
+    ParentFont = False
+    OnClick = BtnInfo1Click
+    CorHover = clGrayText
+    CorPadrao = 13681967
+  end
+  object BtnDark1: TBtnDark
+    Left = 24
+    Top = 344
+    Width = 265
+    Height = 41
+    Caption = 'Dark'
+    Color = 2434341
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    HotTrackFont.Charset = DEFAULT_CHARSET
+    HotTrackFont.Color = clWindowText
+    HotTrackFont.Height = -13
+    HotTrackFont.Name = 'MS Sans Serif'
+    HotTrackFont.Style = []
+    ParentFont = False
+    OnClick = BtnDark1Click
+    CorHover = clGrayText
+    CorPadrao = 2434341
+  end
+  object BtnLight1: TBtnLight
+    Left = 24
+    Top = 400
+    Width = 265
+    Height = 41
+    Caption = 'Light'
+    Color = 15987699
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    HotTrackFont.Charset = DEFAULT_CHARSET
+    HotTrackFont.Color = clWindowText
+    HotTrackFont.Height = -13
+    HotTrackFont.Name = 'MS Sans Serif'
+    HotTrackFont.Style = []
+    ParentFont = False
+    OnClick = BtnLight1Click
+    CorHover = clGrayText
+    CorPadrao = 15987699
+  end
+end

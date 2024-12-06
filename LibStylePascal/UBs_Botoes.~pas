@@ -32,14 +32,25 @@ end;
   Local: String;
 
  const
-  IMG_PRIMARY   = '/Img/bs_btn-primary.bmp';
-  IMG_SECUNDARY = '/Img/bs_btn-secondary.bmp';
-  IMG_SUCCESS   = '/Img/bs_btn-success.bmp';
-  IMG_DANGER    = '/Img/bs_btn-danger.bmp';
-  IMG_WARNING   = '/Img/bs_btn-warning.bmp';
-  IMG_INFO      = '/Img/bs_btn-info.bmp';
-  IMG_LIGHT     = '/Img/bs_btn-light.bmp';
-  IMG_DARK      = '/Img/bs_btn-dark.bmp';
+ ///  consts para botões
+
+  PRIMARY   = $00FF8000;
+  SECUNDARY = $007E7E7E;
+  SUCCESS   = $0017AA3D;
+  DANGER    = $004E31EE;
+  WARNING   = $000DBEF2;
+  INFO      = $00D0C52F;
+  LIGHT     = $00F3F3F3;
+  DARK      = $00252525;
+
+  /// consts para menu
+  FUNDO_MENU_SIMPLES = clBtnFace;
+  HEADER_ESCURO = $003E1F00;
+  BG_SIMPLES = clInactiveBorder; //BACKGRAUND
+  BTN_MENU_CLARO = $00F3F3F3;
+  BTN_MENU_ESCURO = $00252525;
+
+
 
 implementation
 
