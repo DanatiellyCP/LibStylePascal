@@ -3,7 +3,7 @@ unit UButtons_camaleao;
 interface
 
 uses
-  Classes, Controls, StdCtrls, Graphics, Messages, JvButtons, JvSpeedButton;
+  Classes, Controls, StdCtrls, Graphics, Messages, JvButtons, JvSpeedButton, Types;
 
 const
  ///  consts para botões
@@ -249,9 +249,8 @@ begin
   end;
 end;
 
+
 //*************** primary events ************************
-
-
 
 //*************** Secundary events ************************
 constructor TBtnSecundary.Create(AOwner: TComponent);
@@ -264,6 +263,7 @@ begin
   Color := SECUNDARY;
   Font.Size := FONT_SIZE;
   Font.Color := clWhite;
+
 end;
 
 procedure TBtnSecundary.SetCorHover(Value: TColor);
@@ -317,6 +317,7 @@ begin
   Color := SUCCESS;
   Font.Size := FONT_SIZE;
   Font.Color := clWhite;
+
 end;
 
 procedure TBtnSuccess.SetCorHover(Value: TColor);
@@ -421,6 +422,10 @@ begin
   Color := WARNING;
   Font.Size := FONT_SIZE;
   Font.Color := clWhite;
+
+  // Força o botão a ignorar os estilos do Windows
+  ControlStyle := ControlStyle - [csParentBackground];
+
 end;
 
 procedure TBtnWarning.SetCorHover(Value: TColor);
@@ -512,6 +517,7 @@ begin
     Invalidate; // Redesenha o botão para refletir a alteração
   end;
 end;
+
 
 //*************** Info events ************************
 
@@ -616,9 +622,8 @@ begin
     Invalidate; // Redesenha o botão para refletir a alteração
   end;
 end;
+
 //*************** Dark events ************************
-
-
 
 procedure Register;
 begin

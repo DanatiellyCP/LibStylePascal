@@ -4,7 +4,7 @@ object FrmTesteBotoes: TFrmTesteBotoes
   AutoScroll = False
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Teste de Bot'#245'es Lib Camale'#227'o'
-  ClientHeight = 451
+  ClientHeight = 471
   ClientWidth = 315
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -56,6 +56,7 @@ object FrmTesteBotoes: TFrmTesteBotoes
     HotTrackFont.Name = 'MS Sans Serif'
     HotTrackFont.Style = []
     ParentFont = False
+    OnClick = BtnSecundary1Click
     CorHover = clGrayText
     CorPadrao = 8289918
     FontePadrao = 'MS Sans Serif'
@@ -78,6 +79,7 @@ object FrmTesteBotoes: TFrmTesteBotoes
     HotTrackFont.Name = 'MS Sans Serif'
     HotTrackFont.Style = []
     ParentFont = False
+    OnClick = BtnSuccess1Click
     CorHover = clGrayText
     CorPadrao = 1550909
   end
@@ -99,6 +101,7 @@ object FrmTesteBotoes: TFrmTesteBotoes
     HotTrackFont.Name = 'MS Sans Serif'
     HotTrackFont.Style = []
     ParentFont = False
+    OnClick = BtnDanger1Click
     CorHover = clRed
     CorPadrao = 5124590
   end
@@ -120,6 +123,7 @@ object FrmTesteBotoes: TFrmTesteBotoes
     HotTrackFont.Name = 'MS Sans Serif'
     HotTrackFont.Style = []
     ParentFont = False
+    OnClick = BtnWarning1Click
     CorHover = clGrayText
     CorPadrao = 900850
   end
@@ -141,6 +145,7 @@ object FrmTesteBotoes: TFrmTesteBotoes
     HotTrackFont.Name = 'MS Sans Serif'
     HotTrackFont.Style = []
     ParentFont = False
+    OnClick = BtnInfo1Click
     CorHover = clGrayText
     CorPadrao = 13681967
   end
@@ -162,6 +167,7 @@ object FrmTesteBotoes: TFrmTesteBotoes
     HotTrackFont.Name = 'MS Sans Serif'
     HotTrackFont.Style = []
     ParentFont = False
+    OnClick = BtnDark1Click
     CorHover = clGrayText
     CorPadrao = 2434341
   end
@@ -183,6 +189,7 @@ object FrmTesteBotoes: TFrmTesteBotoes
     HotTrackFont.Name = 'MS Sans Serif'
     HotTrackFont.Style = []
     ParentFont = False
+    OnClick = BtnLight1Click
     CorHover = clGrayText
     CorPadrao = 15987699
   end

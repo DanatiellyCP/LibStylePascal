@@ -25,7 +25,14 @@ package camaleao;
 {$IMPLICITBUILD OFF}
 
 requires
-  rtl;
+  rtl,
+  vcl,
+  vcljpg,
+  dbrtl,
+  Jcl,
+  JvCore,
+  JvSystem,
+  JvControls;
 
 contains
   UButtons_camaleao in 'UButtons_camaleao.pas';

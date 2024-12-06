@@ -35,6 +35,7 @@ requires
   JvControls;
 
 contains
-  UButtons_camaleao in 'UButtons_camaleao.pas';
+  UButtons_camaleao in 'UButtons_camaleao.pas',
+  UButtons_camaleao_static in 'UButtons_camaleao_static.pas';
 
 end.

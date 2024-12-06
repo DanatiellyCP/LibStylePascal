@@ -3,7 +3,7 @@ unit UButtons_camaleao;
 interface
 
 uses
-  Classes, Controls, StdCtrls, Graphics, Messages, JvButtons, JvSpeedButton;
+  Classes, Controls, StdCtrls, Graphics, Messages, JvButtons, JvSpeedButton, Types;
 
 const
  ///  consts para botões
@@ -34,6 +34,7 @@ type
   protected
      procedure CMMouseEnter(var Message: TMessage); message CM_MOUSEENTER;
      procedure CMMouseLeave(var Message: TMessage); message CM_MOUSELEAVE;
+     procedure Paint;
   public
 
     constructor Create(AOwner: TComponent); override;
@@ -56,6 +57,7 @@ type
      procedure CMMouseEnter(var Message: TMessage); message CM_MOUSEENTER;
      procedure CMMouseLeave(var Message: TMessage); message CM_MOUSELEAVE;
      procedure SetFontePadrao(const Value: TFontName);
+     procedure Paint;
   public
 
     constructor Create(AOwner: TComponent); override;
@@ -79,6 +81,7 @@ type
   protected
      procedure CMMouseEnter(var Message: TMessage); message CM_MOUSEENTER;
      procedure CMMouseLeave(var Message: TMessage); message CM_MOUSELEAVE;
+     procedure Paint;
   public
 
     constructor Create(AOwner: TComponent); override;
@@ -100,6 +103,7 @@ type
   protected
      procedure CMMouseEnter(var Message: TMessage); message CM_MOUSEENTER;
      procedure CMMouseLeave(var Message: TMessage); message CM_MOUSELEAVE;
+     procedure Paint;
   public
 
     constructor Create(AOwner: TComponent); override;
@@ -121,6 +125,7 @@ type
   protected
      procedure CMMouseEnter(var Message: TMessage); message CM_MOUSEENTER;
      procedure CMMouseLeave(var Message: TMessage); message CM_MOUSELEAVE;
+     procedure Paint;
   public
 
     constructor Create(AOwner: TComponent); override;
@@ -142,6 +147,7 @@ type
   protected
      procedure CMMouseEnter(var Message: TMessage); message CM_MOUSEENTER;
      procedure CMMouseLeave(var Message: TMessage); message CM_MOUSELEAVE;
+     procedure Paint;
   public
 
     constructor Create(AOwner: TComponent); override;
@@ -163,6 +169,7 @@ type
   protected
      procedure CMMouseEnter(var Message: TMessage); message CM_MOUSEENTER;
      procedure CMMouseLeave(var Message: TMessage); message CM_MOUSELEAVE;
+     procedure Paint;
   public
 
     constructor Create(AOwner: TComponent); override;
@@ -184,6 +191,7 @@ type
   protected
      procedure CMMouseEnter(var Message: TMessage); message CM_MOUSEENTER;
      procedure CMMouseLeave(var Message: TMessage); message CM_MOUSELEAVE;
+     procedure Paint;
   public
 
     constructor Create(AOwner: TComponent); override;
@@ -210,6 +218,10 @@ begin
   Color := PRIMARY;
   Font.Size := FONT_SIZE;
   Font.Color := clWhite;
+
+  // Força o botão a ignorar os estilos do Windows
+  ControlStyle := ControlStyle - [csParentBackground];
+
 end;
 
 procedure TBtnPimary.SetCorHover(Value: TColor);
@@ -249,6 +261,27 @@ begin
   end;
 end;
 
+// para corrigir o problema de cor com o windows
+procedure TBtnPimary.Paint;
+var
+  Rect: TRect;
+begin
+  inherited Paint;
+
+  // Preenche o fundo do botão com a cor atual
+  Rect := ClientRect;
+  Canvas.Brush.Color := PRIMARY;
+  Canvas.FillRect(Rect);
+
+  // Desenha o texto do botão
+  Canvas.Font := Font;
+  Canvas.TextOut(
+    (Width - Canvas.TextWidth(Caption)) div 2,
+    (Height - Canvas.TextHeight(Caption)) div 2,
+    Caption
+  );
+end;
+
 //*************** primary events ************************
 
 
@@ -264,6 +297,9 @@ begin
   Color := SECUNDARY;
   Font.Size := FONT_SIZE;
   Font.Color := clWhite;
+
+  // Força o botão a ignorar os estilos do Windows
+  ControlStyle := ControlStyle - [csParentBackground];
 end;
 
 procedure TBtnSecundary.SetCorHover(Value: TColor);
@@ -303,6 +339,27 @@ begin
   end;
 end;
 
+// para corrigir o problema de cor com o windows
+procedure TBtnSecundary.Paint;
+var
+  Rect: TRect;
+begin
+  inherited Paint;
+
+  // Preenche o fundo do botão com a cor atual
+  Rect := ClientRect;
+  Canvas.Brush.Color := SECUNDARY;
+  Canvas.FillRect(Rect);
+
+  // Desenha o texto do botão
+  Canvas.Font := Font;
+  Canvas.TextOut(
+    (Width - Canvas.TextWidth(Caption)) div 2,
+    (Height - Canvas.TextHeight(Caption)) div 2,
+    Caption
+  );
+end;
+
 //*************** Secundary events ************************
 
 
@@ -317,6 +374,10 @@ begin
   Color := SUCCESS;
   Font.Size := FONT_SIZE;
   Font.Color := clWhite;
+
+  // Força o botão a ignorar os estilos do Windows
+  ControlStyle := ControlStyle - [csParentBackground];
+
 end;
 
 procedure TBtnSuccess.SetCorHover(Value: TColor);
@@ -356,6 +417,27 @@ begin
   end;
 end;
 
+// para corrigir o problema de cor com o windows
+procedure TBtnSuccess.Paint;
+var
+  Rect: TRect;
+begin
+  inherited Paint;
+
+  // Preenche o fundo do botão com a cor atual
+  Rect := ClientRect;
+  Canvas.Brush.Color := SUCCESS;
+  Canvas.FillRect(Rect);
+
+  // Desenha o texto do botão
+  Canvas.Font := Font;
+  Canvas.TextOut(
+    (Width - Canvas.TextWidth(Caption)) div 2,
+    (Height - Canvas.TextHeight(Caption)) div 2,
+    Caption
+  );
+end;
+
 //*************** Success events ************************
 
 //*************** Danger events ************************
@@ -369,6 +451,9 @@ begin
   Color := DANGER;
   Font.Size := FONT_SIZE;
   Font.Color := clWhite;
+
+  // Força o botão a ignorar os estilos do Windows
+  ControlStyle := ControlStyle - [csParentBackground];
 end;
 
 procedure TBtnDanger.SetCorHover(Value: TColor);
@@ -408,6 +493,27 @@ begin
   end;
 end;
 
+// para corrigir o problema de cor com o windows
+procedure TBtnDanger.Paint;
+var
+  Rect: TRect;
+begin
+  inherited Paint;
+
+  // Preenche o fundo do botão com a cor atual
+  Rect := ClientRect;
+  Canvas.Brush.Color := DANGER;
+  Canvas.FillRect(Rect);
+
+  // Desenha o texto do botão
+  Canvas.Font := Font;
+  Canvas.TextOut(
+    (Width - Canvas.TextWidth(Caption)) div 2,
+    (Height - Canvas.TextHeight(Caption)) div 2,
+    Caption
+  );
+end;
+
 //*************** Danger events ************************
 
 //*************** Warning events ************************
@@ -421,6 +527,10 @@ begin
   Color := WARNING;
   Font.Size := FONT_SIZE;
   Font.Color := clWhite;
+
+  // Força o botão a ignorar os estilos do Windows
+  ControlStyle := ControlStyle - [csParentBackground];
+
 end;
 
 procedure TBtnWarning.SetCorHover(Value: TColor);
@@ -460,6 +570,27 @@ begin
   end;
 end;
 
+// para corrigir o problema de cor com o windows
+procedure TBtnWarning.Paint;
+var
+  Rect: TRect;
+begin
+  inherited Paint;
+
+  // Preenche o fundo do botão com a cor atual
+  Rect := ClientRect;
+  Canvas.Brush.Color := WARNING;
+  Canvas.FillRect(Rect);
+
+  // Desenha o texto do botão
+  Canvas.Font := Font;
+  Canvas.TextOut(
+    (Width - Canvas.TextWidth(Caption)) div 2,
+    (Height - Canvas.TextHeight(Caption)) div 2,
+    Caption
+  );
+end;
+
 //*************** Warning events ************************
 
 
@@ -474,6 +605,9 @@ begin
   Color :=  INFO;
   Font.Size := FONT_SIZE;
   Font.Color := clWhite;
+
+  // Força o botão a ignorar os estilos do Windows
+  ControlStyle := ControlStyle - [csParentBackground];
 end;
 
 procedure TBtnInfo.SetCorHover(Value: TColor);
@@ -513,6 +647,27 @@ begin
   end;
 end;
 
+// para corrigir o problema de cor com o windows
+procedure TBtnInfo.Paint;
+var
+  Rect: TRect;
+begin
+  inherited Paint;
+
+  // Preenche o fundo do botão com a cor atual
+  Rect := ClientRect;
+  Canvas.Brush.Color := INFO;
+  Canvas.FillRect(Rect);
+
+  // Desenha o texto do botão
+  Canvas.Font := Font;
+  Canvas.TextOut(
+    (Width - Canvas.TextWidth(Caption)) div 2,
+    (Height - Canvas.TextHeight(Caption)) div 2,
+    Caption
+  );
+end;
+
 //*************** Info events ************************
 
 //*************** Light events ************************
@@ -525,7 +680,11 @@ begin
   Caption := 'Light';
   Color := LIGHT;
   Font.Size := FONT_SIZE;
-  Font.Color := clWhite;
+  Font.Color := clBlack;
+
+  // Força o botão a ignorar os estilos do Windows
+  ControlStyle := ControlStyle - [csParentBackground];
+
 end;
 
 procedure TBtnLight.SetCorHover(Value: TColor);
@@ -565,6 +724,27 @@ begin
   end;
 end;
 
+// para corrigir o problema de cor com o windows
+procedure TBtnLight.Paint;
+var
+  Rect: TRect;
+begin
+  inherited Paint;
+
+  // Preenche o fundo do botão com a cor atual
+  Rect := ClientRect;
+  Canvas.Brush.Color := LIGHT;
+  Canvas.FillRect(Rect);
+
+  // Desenha o texto do botão
+  Canvas.Font := Font;
+  Canvas.TextOut(
+    (Width - Canvas.TextWidth(Caption)) div 2,
+    (Height - Canvas.TextHeight(Caption)) div 2,
+    Caption
+  );
+end;
+
 //*************** Light events ************************
 
 //*************** Dark events ************************
@@ -578,6 +758,10 @@ begin
   Color := DARK;
   Font.Size := FONT_SIZE;
   Font.Color := clWhite;
+
+  // Força o botão a ignorar os estilos do Windows
+  ControlStyle := ControlStyle - [csParentBackground];
+  
 end;
 
 procedure TBtnDark.SetCorHover(Value: TColor);
@@ -615,6 +799,27 @@ begin
     Font.Name := FFontePadrao; // Aplica a nova fonte ao botão
     Invalidate; // Redesenha o botão para refletir a alteração
   end;
+end;
+
+// para corrigir o problema de cor com o windows
+procedure TBtnDark.Paint;
+var
+  Rect: TRect;
+begin
+  inherited Paint;
+
+  // Preenche o fundo do botão com a cor atual
+  Rect := ClientRect;
+  Canvas.Brush.Color := DARK;
+  Canvas.FillRect(Rect);
+
+  // Desenha o texto do botão
+  Canvas.Font := Font;
+  Canvas.TextOut(
+    (Width - Canvas.TextWidth(Caption)) div 2,
+    (Height - Canvas.TextHeight(Caption)) div 2,
+    Caption
+  );
 end;
 //*************** Dark events ************************
 

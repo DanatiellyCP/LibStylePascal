@@ -1,4 +1,7 @@
-unit UButtons_camaleao;
+unit UButtons_camaleao_static;
+
+// Botões que sofrem impacto de componentes externos do windows
+// e perdem a cor setada
 
 interface
 
@@ -22,7 +25,7 @@ const
 
 // Classe botão Pimary
 type
-  TBtnPimary = class(TJvSpeedButton)
+  TBtnPimaryST = class(TJvSpeedButton)
   private
     FCorHover: TColor;
     FCorPadrao: TColor;
@@ -46,7 +49,7 @@ type
 
 // Classe botão Secundary
 type
-  TBtnSecundary = class(TJvSpeedButton)
+  TBtnSecundaryST = class(TJvSpeedButton)
   private
     FCorHover: TColor;
     FCorPadrao: TColor;
@@ -70,7 +73,7 @@ type
 
 // Classe botão - Success
 type
-  TBtnSuccess = class(TJvSpeedButton)
+  TBtnSuccessST = class(TJvSpeedButton)
   private
     FCorHover: TColor;
     FCorPadrao: TColor;
@@ -92,7 +95,7 @@ type
 
 // Classe botão Danger
 type
-  TBtnDanger = class(TJvSpeedButton)
+  TBtnDangerST = class(TJvSpeedButton)
   private
     FCorHover: TColor;
     FCorPadrao: TColor;
@@ -114,7 +117,7 @@ type
 
 // Classe botão Warning
 type
-  TBtnWarning = class(TJvSpeedButton)
+  TBtnWarningST = class(TJvSpeedButton)
   private
     FCorHover: TColor;
     FCorPadrao: TColor;
@@ -136,7 +139,7 @@ type
 
 // Classe botão Info
 type
-  TBtnInfo = class(TJvSpeedButton)
+  TBtnInfoST = class(TJvSpeedButton)
   private
     FCorHover: TColor;
     FCorPadrao: TColor;
@@ -158,7 +161,7 @@ type
 
 //classe botão Light
 type
-  TBtnLight = class(TJvSpeedButton)
+  TBtnLightST = class(TJvSpeedButton)
   private
     FCorHover: TColor;
     FCorPadrao: TColor;
@@ -180,7 +183,7 @@ type
 
 //classe botão Dark
 type
-  TBtnDark = class(TJvSpeedButton)
+  TBtnDarkST = class(TJvSpeedButton)
   private
     FCorHover: TColor;
     FCorPadrao: TColor;
@@ -208,7 +211,7 @@ implementation
 
 //metodos das classes de botões
 //*************** primary events ************************
-constructor TBtnPimary.Create(AOwner: TComponent);
+constructor TBtnPimaryST.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FCorHover := clGrayText;  // Cor quando o mouse está sobre o botão
@@ -224,13 +227,13 @@ begin
 
 end;
 
-procedure TBtnPimary.SetCorHover(Value: TColor);
+procedure TBtnPimaryST.SetCorHover(Value: TColor);
 begin
   if FCorHover <> Value then
     FCorHover := Value;
 end;
 
-procedure TBtnPimary.SetCorPadrao(Value: TColor);
+procedure TBtnPimaryST.SetCorPadrao(Value: TColor);
 begin
   if FCorPadrao <> Value then
   begin
@@ -239,19 +242,19 @@ begin
   end;
 end;
 
-procedure TBtnPimary.CMMouseEnter(var Message: TMessage);
+procedure TBtnPimaryST.CMMouseEnter(var Message: TMessage);
 begin
   inherited;
   Color := FCorHover; // Altera a cor ao passar o mouse
 end;
 
-procedure TBtnPimary.CMMouseLeave(var Message: TMessage);
+procedure TBtnPimaryST.CMMouseLeave(var Message: TMessage);
 begin
   inherited;
   Color := FCorPadrao; // Volta à cor padrão
 end;
 
-procedure TBtnPimary.SetFontePadrao(const Value: TFontName);
+procedure TBtnPimaryST.SetFontePadrao(const Value: TFontName);
 begin
   if FFontePadrao <> Value then
   begin
@@ -262,7 +265,7 @@ begin
 end;
 
 // para corrigir o problema de cor com o windows
-procedure TBtnPimary.Paint;
+procedure TBtnPimaryST.Paint;
 var
   Rect: TRect;
 begin
@@ -287,7 +290,7 @@ end;
 
 
 //*************** Secundary events ************************
-constructor TBtnSecundary.Create(AOwner: TComponent);
+constructor TBtnSecundaryST.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FCorHover := clGrayText;  // Cor quando o mouse está sobre o botão
@@ -302,13 +305,13 @@ begin
   ControlStyle := ControlStyle - [csParentBackground];
 end;
 
-procedure TBtnSecundary.SetCorHover(Value: TColor);
+procedure TBtnSecundaryST.SetCorHover(Value: TColor);
 begin
   if FCorHover <> Value then
     FCorHover := Value;
 end;
 
-procedure TBtnSecundary.SetCorPadrao(Value: TColor);
+procedure TBtnSecundaryST.SetCorPadrao(Value: TColor);
 begin
   if FCorPadrao <> Value then
   begin
@@ -317,19 +320,19 @@ begin
   end;
 end;
 
-procedure TBtnSecundary.CMMouseEnter(var Message: TMessage);
+procedure TBtnSecundaryST.CMMouseEnter(var Message: TMessage);
 begin
   inherited;
   Color := FCorHover; // Altera a cor ao passar o mouse
 end;
 
-procedure TBtnSecundary.CMMouseLeave(var Message: TMessage);
+procedure TBtnSecundaryST.CMMouseLeave(var Message: TMessage);
 begin
   inherited;
   Color := FCorPadrao; // Volta à cor padrão
 end;
 
-procedure TBtnSecundary.SetFontePadrao(const Value: TFontName);
+procedure TBtnSecundaryST.SetFontePadrao(const Value: TFontName);
 begin
   if FFontePadrao <> Value then
   begin
@@ -340,7 +343,7 @@ begin
 end;
 
 // para corrigir o problema de cor com o windows
-procedure TBtnSecundary.Paint;
+procedure TBtnSecundaryST.Paint;
 var
   Rect: TRect;
 begin
@@ -364,7 +367,7 @@ end;
 
 
 //*************** Success events ************************
-constructor TBtnSuccess.Create(AOwner: TComponent);
+constructor TBtnSuccessST.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FCorHover := clGrayText;  // Cor quando o mouse está sobre o botão
@@ -380,13 +383,13 @@ begin
 
 end;
 
-procedure TBtnSuccess.SetCorHover(Value: TColor);
+procedure TBtnSuccessST.SetCorHover(Value: TColor);
 begin
   if FCorHover <> Value then
     FCorHover := Value;
 end;
 
-procedure TBtnSuccess.SetCorPadrao(Value: TColor);
+procedure TBtnSuccessST.SetCorPadrao(Value: TColor);
 begin
   if FCorPadrao <> Value then
   begin
@@ -395,19 +398,19 @@ begin
   end;
 end;
 
-procedure TBtnSuccess.CMMouseEnter(var Message: TMessage);
+procedure TBtnSuccessST.CMMouseEnter(var Message: TMessage);
 begin
   inherited;
   Color := FCorHover; // Altera a cor ao passar o mouse
 end;
 
-procedure TBtnSuccess.CMMouseLeave(var Message: TMessage);
+procedure TBtnSuccessST.CMMouseLeave(var Message: TMessage);
 begin
   inherited;
   Color := FCorPadrao; // Volta à cor padrão
 end;
 
-procedure TBtnSuccess.SetFontePadrao(const Value: TFontName);
+procedure TBtnSuccessST.SetFontePadrao(const Value: TFontName);
 begin
   if FFontePadrao <> Value then
   begin
@@ -418,7 +421,7 @@ begin
 end;
 
 // para corrigir o problema de cor com o windows
-procedure TBtnSuccess.Paint;
+procedure TBtnSuccessST.Paint;
 var
   Rect: TRect;
 begin
@@ -441,7 +444,7 @@ end;
 //*************** Success events ************************
 
 //*************** Danger events ************************
-constructor TBtnDanger.Create(AOwner: TComponent);
+constructor TBtnDangerST.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FCorHover := clred;  // Cor quando o mouse está sobre o botão
@@ -456,13 +459,13 @@ begin
   ControlStyle := ControlStyle - [csParentBackground];
 end;
 
-procedure TBtnDanger.SetCorHover(Value: TColor);
+procedure TBtnDangerST.SetCorHover(Value: TColor);
 begin
   if FCorHover <> Value then
     FCorHover := Value;
 end;
 
-procedure TBtnDanger.SetCorPadrao(Value: TColor);
+procedure TBtnDangerST.SetCorPadrao(Value: TColor);
 begin
   if FCorPadrao <> Value then
   begin
@@ -471,19 +474,19 @@ begin
   end;
 end;
 
-procedure TBtnDanger.CMMouseEnter(var Message: TMessage);
+procedure TBtnDangerST.CMMouseEnter(var Message: TMessage);
 begin
   inherited;
   Color := FCorHover; // Altera a cor ao passar o mouse
 end;
 
-procedure TBtnDanger.CMMouseLeave(var Message: TMessage);
+procedure TBtnDangerST.CMMouseLeave(var Message: TMessage);
 begin
   inherited;
   Color := FCorPadrao; // Volta à cor padrão
 end;
 
-procedure TBtnDanger.SetFontePadrao(const Value: TFontName);
+procedure TBtnDangerST.SetFontePadrao(const Value: TFontName);
 begin
   if FFontePadrao <> Value then
   begin
@@ -494,7 +497,7 @@ begin
 end;
 
 // para corrigir o problema de cor com o windows
-procedure TBtnDanger.Paint;
+procedure TBtnDangerST.Paint;
 var
   Rect: TRect;
 begin
@@ -517,7 +520,7 @@ end;
 //*************** Danger events ************************
 
 //*************** Warning events ************************
-constructor TBtnWarning.Create(AOwner: TComponent);
+constructor TBtnWarningST.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FCorHover := clGrayText;  // Cor quando o mouse está sobre o botão
@@ -533,13 +536,13 @@ begin
 
 end;
 
-procedure TBtnWarning.SetCorHover(Value: TColor);
+procedure TBtnWarningST.SetCorHover(Value: TColor);
 begin
   if FCorHover <> Value then
     FCorHover := Value;
 end;
 
-procedure TBtnWarning.SetCorPadrao(Value: TColor);
+procedure TBtnWarningST.SetCorPadrao(Value: TColor);
 begin
   if FCorPadrao <> Value then
   begin
@@ -548,19 +551,19 @@ begin
   end;
 end;
 
-procedure TBtnWarning.CMMouseEnter(var Message: TMessage);
+procedure TBtnWarningST.CMMouseEnter(var Message: TMessage);
 begin
   inherited;
   Color := FCorHover; // Altera a cor ao passar o mouse
 end;
 
-procedure TBtnWarning.CMMouseLeave(var Message: TMessage);
+procedure TBtnWarningST.CMMouseLeave(var Message: TMessage);
 begin
   inherited;
   Color := FCorPadrao; // Volta à cor padrão
 end;
 
-procedure TBtnWarning.SetFontePadrao(const Value: TFontName);
+procedure TBtnWarningST.SetFontePadrao(const Value: TFontName);
 begin
   if FFontePadrao <> Value then
   begin
@@ -571,7 +574,7 @@ begin
 end;
 
 // para corrigir o problema de cor com o windows
-procedure TBtnWarning.Paint;
+procedure TBtnWarningST.Paint;
 var
   Rect: TRect;
 begin
@@ -595,7 +598,7 @@ end;
 
 
 //*************** Info events ************************
-constructor TBtnInfo.Create(AOwner: TComponent);
+constructor TBtnInfoST.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FCorHover := clGrayText;  // Cor quando o mouse está sobre o botão
@@ -610,13 +613,13 @@ begin
   ControlStyle := ControlStyle - [csParentBackground];
 end;
 
-procedure TBtnInfo.SetCorHover(Value: TColor);
+procedure TBtnInfoST.SetCorHover(Value: TColor);
 begin
   if FCorHover <> Value then
     FCorHover := Value;
 end;
 
-procedure TBtnInfo.SetCorPadrao(Value: TColor);
+procedure TBtnInfoST.SetCorPadrao(Value: TColor);
 begin
   if FCorPadrao <> Value then
   begin
@@ -625,19 +628,19 @@ begin
   end;
 end;
 
-procedure TBtnInfo.CMMouseEnter(var Message: TMessage);
+procedure TBtnInfoST.CMMouseEnter(var Message: TMessage);
 begin
   inherited;
   Color := FCorHover; // Altera a cor ao passar o mouse
 end;
 
-procedure TBtnInfo.CMMouseLeave(var Message: TMessage);
+procedure TBtnInfoST.CMMouseLeave(var Message: TMessage);
 begin
   inherited;
   Color := FCorPadrao; // Volta à cor padrão
 end;
 
-procedure TBtnInfo.SetFontePadrao(const Value: TFontName);
+procedure TBtnInfoST.SetFontePadrao(const Value: TFontName);
 begin
   if FFontePadrao <> Value then
   begin
@@ -648,7 +651,7 @@ begin
 end;
 
 // para corrigir o problema de cor com o windows
-procedure TBtnInfo.Paint;
+procedure TBtnInfoST.Paint;
 var
   Rect: TRect;
 begin
@@ -671,7 +674,7 @@ end;
 //*************** Info events ************************
 
 //*************** Light events ************************
-constructor TBtnLight.Create(AOwner: TComponent);
+constructor TBtnLightST.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FCorHover := clGrayText;  // Cor quando o mouse está sobre o botão
@@ -687,13 +690,13 @@ begin
 
 end;
 
-procedure TBtnLight.SetCorHover(Value: TColor);
+procedure TBtnLightST.SetCorHover(Value: TColor);
 begin
   if FCorHover <> Value then
     FCorHover := Value;
 end;
 
-procedure TBtnLight.SetCorPadrao(Value: TColor);
+procedure TBtnLightST.SetCorPadrao(Value: TColor);
 begin
   if FCorPadrao <> Value then
   begin
@@ -702,19 +705,19 @@ begin
   end;
 end;
 
-procedure TBtnLight.CMMouseEnter(var Message: TMessage);
+procedure TBtnLightST.CMMouseEnter(var Message: TMessage);
 begin
   inherited;
   Color := FCorHover; // Altera a cor ao passar o mouse
 end;
 
-procedure TBtnLight.CMMouseLeave(var Message: TMessage);
+procedure TBtnLightST.CMMouseLeave(var Message: TMessage);
 begin
   inherited;
   Color := FCorPadrao; // Volta à cor padrão
 end;
 
-procedure TBtnLight.SetFontePadrao(const Value: TFontName);
+procedure TBtnLightST.SetFontePadrao(const Value: TFontName);
 begin
   if FFontePadrao <> Value then
   begin
@@ -725,7 +728,7 @@ begin
 end;
 
 // para corrigir o problema de cor com o windows
-procedure TBtnLight.Paint;
+procedure TBtnLightST.Paint;
 var
   Rect: TRect;
 begin
@@ -748,7 +751,7 @@ end;
 //*************** Light events ************************
 
 //*************** Dark events ************************
-constructor TBtnDark.Create(AOwner: TComponent);
+constructor TBtnDarkST.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FCorHover := clGrayText;  // Cor quando o mouse está sobre o botão
@@ -764,13 +767,13 @@ begin
   
 end;
 
-procedure TBtnDark.SetCorHover(Value: TColor);
+procedure TBtnDarkST.SetCorHover(Value: TColor);
 begin
   if FCorHover <> Value then
     FCorHover := Value;
 end;
 
-procedure TBtnDark.SetCorPadrao(Value: TColor);
+procedure TBtnDarkST.SetCorPadrao(Value: TColor);
 begin
   if FCorPadrao <> Value then
   begin
@@ -779,19 +782,19 @@ begin
   end;
 end;
 
-procedure TBtnDark.CMMouseEnter(var Message: TMessage);
+procedure TBtnDarkST.CMMouseEnter(var Message: TMessage);
 begin
   inherited;
   Color := FCorHover; // Altera a cor ao passar o mouse
 end;
 
-procedure TBtnDark.CMMouseLeave(var Message: TMessage);
+procedure TBtnDarkST.CMMouseLeave(var Message: TMessage);
 begin
   inherited;
   Color := FCorPadrao; // Volta à cor padrão
 end;
 
-procedure TBtnDark.SetFontePadrao(const Value: TFontName);
+procedure TBtnDarkST.SetFontePadrao(const Value: TFontName);
 begin
   if FFontePadrao <> Value then
   begin
@@ -802,7 +805,7 @@ begin
 end;
 
 // para corrigir o problema de cor com o windows
-procedure TBtnDark.Paint;
+procedure TBtnDarkST.Paint;
 var
   Rect: TRect;
 begin
@@ -827,7 +830,7 @@ end;
 
 procedure Register;
 begin
-  RegisterComponents('ButtonsCamaleao', [TBtnPimary, TBtnSecundary, TBtnSuccess, TBtnDanger, TBtnWarning, TBtnInfo, TBtnLight, TBtnDark]);
+  RegisterComponents('ButtonsCamaleao_st', [TBtnPimaryST, TBtnSecundaryST, TBtnSuccessST, TBtnDangerST, TBtnWarningST, TBtnInfoST, TBtnLightST, TBtnDarkST]);
 end;
 
 

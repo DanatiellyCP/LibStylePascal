@@ -1,4 +1,7 @@
-unit UButtons_camaleao;
+unit UButtons_camaleao_static;
+
+// Botões que sofrem impacto de componentes externos do windows
+// e perdem a cor setada
 
 interface
 
@@ -827,7 +830,7 @@ end;
 
 procedure Register;
 begin
-  RegisterComponents('ButtonsCamaleao', [TBtnPimary, TBtnSecundary, TBtnSuccess, TBtnDanger, TBtnWarning, TBtnInfo, TBtnLight, TBtnDark]);
+  RegisterComponents('ButtonsCamaleao_st', [TBtnPimary, TBtnSecundary, TBtnSuccess, TBtnDanger, TBtnWarning, TBtnInfo, TBtnLight, TBtnDark]);
 end;
 
 

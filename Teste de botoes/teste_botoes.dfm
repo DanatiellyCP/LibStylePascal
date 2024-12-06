@@ -4,7 +4,7 @@ object FrmTesteBotoes: TFrmTesteBotoes
   AutoScroll = False
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Teste de Bot'#245'es Lib Camale'#227'o'
-  ClientHeight = 451
+  ClientHeight = 471
   ClientWidth = 315
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,7 +18,7 @@ object FrmTesteBotoes: TFrmTesteBotoes
   object BtnPimary1: TBtnPimary
     Left = 24
     Top = 8
-    Width = 265
+    Width = 105
     Height = 41
     Caption = 'Primary'
     Color = 16744448
@@ -192,5 +192,28 @@ object FrmTesteBotoes: TFrmTesteBotoes
     OnClick = BtnLight1Click
     CorHover = clGrayText
     CorPadrao = 15987699
+  end
+  object BtnPimaryST1: TBtnPimaryST
+    Left = 144
+    Top = 8
+    Width = 105
+    Height = 41
+    Caption = 'Primary Static'
+    Color = 16744448
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    HotTrackFont.Charset = DEFAULT_CHARSET
+    HotTrackFont.Color = clWindowText
+    HotTrackFont.Height = -13
+    HotTrackFont.Name = 'MS Sans Serif'
+    HotTrackFont.Style = []
+    ParentFont = False
+    OnClick = BtnPimaryST1Click
+    CorHover = clGrayText
+    CorPadrao = 16744448
+    FontePadrao = 'MS Sans Serif'
   end
 end

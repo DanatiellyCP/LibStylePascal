@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, UButtons_camaleao, JvExControls, JvSpeedButton;
+  Dialogs, UButtons_camaleao, JvExControls, JvSpeedButton,
+  UButtons_camaleao_static;
 
 type
   TFrmTesteBotoes = class(TForm)
@@ -16,6 +17,7 @@ type
     BtnInfo1: TBtnInfo;
     BtnDark1: TBtnDark;
     BtnLight1: TBtnLight;
+    BtnPimaryST1: TBtnPimaryST;
     procedure BtnPimary1Click(Sender: TObject);
     procedure BtnSecundary1Click(Sender: TObject);
     procedure BtnDanger1Click(Sender: TObject);
@@ -24,6 +26,7 @@ type
     procedure BtnWarning1Click(Sender: TObject);
     procedure BtnDark1Click(Sender: TObject);
     procedure BtnLight1Click(Sender: TObject);
+    procedure BtnPimaryST1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -76,6 +79,11 @@ end;
 procedure TFrmTesteBotoes.BtnLight1Click(Sender: TObject);
 begin
    ShowMessage('Clicou no BtnLight');
+end;
+
+procedure TFrmTesteBotoes.BtnPimaryST1Click(Sender: TObject);
+begin
+  ShowMessage('Botão Estático!');
 end;
 
 end.
