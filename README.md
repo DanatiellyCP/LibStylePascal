@@ -7,4 +7,5 @@ LibStylePascal - Projeto de biblioteca grafica em pascal
 # Dependências: 
 - TJVDotNetEdit, TJVSpeedButton, TImage.
 
+# Modelo:
 <img src="LibStylePascal/img2/Modelo Menu e Form.jpg">
