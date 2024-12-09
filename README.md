@@ -8,4 +8,4 @@ LibStylePascal - Projeto de biblioteca grafica em pascal
 - TJVDotNetEdit, TJVSpeedButton, TImage.
 
 # Modelo:
-<img src="LibStylePascal/img2/Modelo Menu e Form.jpg">
+<img src="LibStylePascal/img2/Modelo s.jpg">
